@@ -17,14 +17,14 @@ import logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
 					level=logging.INFO)
 
-def commands(bot, update):
+def spero_commands(bot, update):
 	user = update.message.from_user.username
-	bot.send_message(chat_id=update.message.chat_id, text="Initiating commands /tip & /withdraw have a specfic format,\n use them like so:" + "\n \n Parameters: \n <user> = target user to tip \n <amount> = amount of SperoCoin to utilise \n <address> = SperoCoin address to withdraw to \n \n Tipping format: \n /tip <user> <amount> \n \n Withdrawing format: \n /withdraw <address> <amount>")
+	bot.send_message(chat_id=update.message.chat_id, text="Initiating commands /spero_tip & /spero_withdraw have a specfic format,\n use them like so:" + "\n \n Parameters: \n <user> = target user to tip \n <amount> = amount of SperoCoin to utilise \n <address> = SperoCoin address to withdraw to \n \n Tipping format: \n /spero_tip <user> <amount> \n \n Withdrawing format: \n /spero_withdraw <address> <amount>")
 
-def help(bot, update):
-	bot.send_message(chat_id=update.message.chat_id, text="The following commands are at your disposal: /hi , /commands , /deposit , /tip , /withdraw , or /balance")
+def spero_help(bot, update):
+	bot.send_message(chat_id=update.message.chat_id, text="The following commands are at your disposal: /spero_hi , /spero_commands , /spero_deposit , /spero_tip , /spero_withdraw , or /spero_balance")
 
-def deposit(bot, update):
+def spero_deposit(bot, update):
 	user = update.message.from_user.username
 	if user is None:
 		bot.send_message(chat_id=update.message.chat_id, text="Please set a telegram username in your profile settings!")
@@ -34,7 +34,7 @@ def deposit(bot, update):
 		clean = (result.stdout.strip()).decode("utf-8")
 		bot.send_message(chat_id=update.message.chat_id, text="@{0} your depositing address is: {1}".format(user,clean))
 
-def tip(bot,update):
+def spero_tip(bot,update):
 	user = update.message.from_user.username
 	target = update.message.text[5:]
 	amount =  target.split(" ")[1]
@@ -64,7 +64,7 @@ def tip(bot,update):
 		else:
 			bot.send_message(chat_id=update.message.chat_id, text="Error that user is not applicable.")
 
-def balance(bot,update):
+def spero_balance(bot,update):
 	user = update.message.from_user.username
 	if user is None:
 		bot.send_message(chat_id=update.message.chat_id, text="Please set a telegram username in your profile settings!")
@@ -78,7 +78,7 @@ def balance(bot,update):
 
 
 
-def withdraw(bot,update):
+def spero_withdraw(bot,update):
 	user = update.message.from_user.username
 	if user is None:
 		bot.send_message(chat_id=update.message.chat_id, text="Please set a telegram username in your profile settings!")
@@ -99,37 +99,37 @@ def withdraw(bot,update):
 			tx = subprocess.run([core,"sendfrom",user,address,amount],stdout=subprocess.PIPE)
 			bot.send_message(chat_id=update.message.chat_id, text="@{0} has successfully withdrew to address: {1} of {2} SPERO" .format(user,address,amount))
 
-def hi(bot,update):
+def spero_hi(bot,update):
 	user = update.message.from_user.username
 	bot.send_message(chat_id=update.message.chat_id, text="Hello @{0}, Let's make a SPERO!".format(user))
 
-def rain(bot,update):
+def spero_rain(bot,update):
   bot.send_message(chat_id=update.message.chat_id, text="Stake for a rainy day!")
 
 from telegram.ext import CommandHandler
 
-commands_handler = CommandHandler('commands', commands)
+commands_handler = CommandHandler('spero_commands', spero_commands)
 dispatcher.add_handler(commands_handler)
 
-rain_handler = CommandHandler('rain', rain)
+rain_handler = CommandHandler('spero_rain', spero_rain)
 dispatcher.add_handler(rain_handler)
 
-hi_handler = CommandHandler('hi', hi)
+hi_handler = CommandHandler('spero_hi', spero_hi)
 dispatcher.add_handler(hi_handler)
 
-withdraw_handler = CommandHandler('withdraw', withdraw)
+withdraw_handler = CommandHandler('spero_withdraw', spero_withdraw)
 dispatcher.add_handler(withdraw_handler)
 
-deposit_handler = CommandHandler('deposit', deposit)
+deposit_handler = CommandHandler('spero_deposit', spero_deposit)
 dispatcher.add_handler(deposit_handler)
 
-tip_handler = CommandHandler('tip', tip)
+tip_handler = CommandHandler('spero_tip', spero_tip)
 dispatcher.add_handler(tip_handler)
 
-balance_handler = CommandHandler('balance', balance)
+balance_handler = CommandHandler('spero_balance', spero_balance)
 dispatcher.add_handler(balance_handler)
 
-help_handler = CommandHandler('help', help)
+help_handler = CommandHandler('spero_help', spero_help)
 dispatcher.add_handler(help_handler)
 
 updater.start_polling()
