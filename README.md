@@ -33,7 +33,7 @@
 *  Run the script
 `python3 command.py`
 
-*  Initiate the bot by inviting it to a chat or via PM, some commands are `/balance` , `/price` , `/help` and to find out the format related to tip others and withdrawal of funds use `/commands`.
+*  Initiate the bot by inviting it to a chat or via PM, some commands are `/funds` , `/price` , `/commands` and to find out the format related to tip others and withdrawal of funds use `/help`.
 
 ### Setting up the bot as so still leaves the wallet unencrypted, so please go to extra measures to provide extra security. Make sure to have SSH encryption on whatever device/droplet you run it on.
 
@@ -69,7 +69,7 @@
 *  Execute o script
 `python3 command.py`
 
-*  Inicie o bot convidando-o para um chat ou via PM, alguns comandos são `/balance`,`/price`, `/help` e para descobrir outros comandos e configurações como a retirada de fundos use`/commands`.
+*  Inicie o bot convidando-o para um chat ou via PM, alguns comandos são `/funds`,`/price`, `/commands` e para descobrir outros comandos e configurações como a retirada de fundos use`/help`.
 
 ### Configure a carteira para deixá-la descriptografada, então, por favor, execute medidas extras de segurança. Certifique-se de ter encriptação SSH em qualquer dispositivo/droplet que você irá executar.
 
