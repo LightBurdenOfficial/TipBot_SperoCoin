@@ -99,7 +99,11 @@ def drawout(bot,update):
 		else:
 			amount = str(amount)
 			tx = subprocess.run([core,"sendfrom",user,address,amount],stdout=subprocess.PIPE)
-			bot.send_message(chat_id=update.message.chat_id, text="@{0} has successfully withdrew to address: {1} of {2} SPERO" .format(user,address,amount))
+			cleantxid = (tx.stdout.strip()).decode("utf-8")
+                        txid = str(cleantxid)
+                        bot.send_message(chat_id=update.message.chat_id, text="@{0} has successfully withdrew to address: {1} of {2} SPERO\n\n TXID: http://sperocoin.ddns.net:3001/tx/{3}" .format(user,address,amount,txid))
+
+
 
 def hello(bot,update):
 	user = update.message.from_user.username
