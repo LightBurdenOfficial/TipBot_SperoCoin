@@ -8,10 +8,16 @@
 
 ## Dependencies
 
-*  `apt-get install python3`
-*  `apt-get install python3-pip`
-*  `pip3 install beautifulsoup4`
-*  `pip3 install python-telegram-bot --upgrade`
+* `# apt update && apt install software-properties-common -y`
+* `# add-apt-repository ppa:deadsnakes/ppa -y`
+* `# apt-get update`
+* `# apt-get install python3.6 python3.6-dev python3.6-venv wget build-essential -y`
+* `$ wget https://bootstrap.pypa.io/get-pip.py`
+* `# python3.6 get-pip.py`
+* `# ln -s /usr/bin/python3.6 /usr/local/bin/python3`
+* `$ pip3 install beautifulsoup4`
+* `$ pip3 install requests`
+* `$ pip3 install python-telegram-bot --upgrade`
 
 * In order to run the tip-bot effectively, a Bitcoin-core based client is needed. For this SperoCoind is used
 
@@ -33,7 +39,7 @@
 * Setup a bot with the user @BotFather through PM on Telegram, after going through a setup you will be given a bot token. Edit the command.py file and replace the parameter 'BOT_TOKEN_HERE' with the one you just recieved.
 
 *  Run the script
-`python3 command.py`
+`python3.6 command.py`
 
 *  Initiate the bot by inviting it to a chat or via PM, some commands are `/funds` , `/price` , `/commands` and to find out the format related to tip others and withdrawal of funds use `/help`.
 
@@ -45,10 +51,16 @@
 
 ## Instalação das Dependências
 
-*  `apt-get install python3`
-*  `apt-get install python3-pip`
-*  `pip3 install beautifulsoup4`
-*  `pip3 install python-telegram-bot --upgrade`
+* `# apt update && apt install software-properties-common -y`
+* `# add-apt-repository ppa:deadsnakes/ppa -y`
+* `# apt-get update`
+* `# apt-get install python3.6 python3.6-dev python3.6-venv wget build-essential -y`
+* `$ wget https://bootstrap.pypa.io/get-pip.py`
+* `# python3.6 get-pip.py`
+* `# ln -s /usr/bin/python3.6 /usr/local/bin/python3`
+* `$ pip3 install beautifulsoup4`
+* `$ pip3 install requests`
+* `$ pip3 install python-telegram-bot --upgrade`
 
 * Para executar o tip-bot efetivamente, é necessário um cliente baseado no Bitcoin-core. Para isso será utilizado a wallet SperoCoind
 
@@ -69,7 +81,7 @@
 * Configure um bot com o usuário @BotFather através de PM no Telegram, depois de configurar, você receberá um token de bot. Edite o arquivo command.py e substitua o parâmetro 'BOT_TOKEN_HERE' pelo que você acabou de receber.
 
 *  Execute o script
-`python3 command.py`
+`python3.6 command.py`
 
 *  Inicie o bot convidando-o para um chat ou via PM, alguns comandos são `/funds`,`/price`, `/commands` e para descobrir outros comandos e configurações como a retirada de fundos use`/help`.
 
