@@ -147,7 +147,7 @@ def price(bot,update):
 	mic3spero = speroCapJson ['mic3spero']['ticker']['last']
 	xthspero = speroCapJson ['xthspero']['ticker']['last']
         update.message.reply_text("💵 Price: \n Cotação/Price: Spero Exchange \n "+
-"\n SPERO/BTC:  R${:.8f}".format(sperobtc) + "\n SPERO/DOGE:  ${:.8f}".format(sperodoge) + "\n SPERO/LTC:  {:.8f}".format(ltcspero) + "\n SPERO/DASH:  {:.8f}".format(dashspero) + "\n SPERO/FCH:  ${:.8f}".format(fchspero) + "\n SPERO/PWC:  ${:.8f}".format(pwcspero) + "\n SPERO/BAB:  ${:.8f}".format(babspero) + "\n SPERO/ZYON:  ${:.8f}".format(zyonspero) + "\n SPERO/NIO:  ${:.8f}".format(niospero) + "\n SPERO/MIC3:  ${:.8f}".format(mic3spero) + "\n SPERO/XTH:  ${:.8f}".format(xthspero))
+"\n SPERO/BTC:  {:.8f}".format(float(sperobtc)) + "\n SPERO/DOGE:  {:.8f}".format(float(sperodoge)) + "\n LTC/SPERO:  {:.8f}".format(float(ltcspero)) + "\n DASH/SPERO:  {:.8f}".format(float(dashspero)) + "\n FCH/SPERO:  {:.8f}".format(float(fchspero)) + "\n PWC/SPERO:  {:.8f}".format(float(pwcspero)) + "\n BAB/SPERO:  {:.8f}".format(float(babspero)) + "\n ZYON/SPERO:  {:.8f}".format(float(zyonspero)) + "\n NIO/SPERO:  {:.8f}".format(float(niospero)) + "\n MIC3/SPERO:  {:.8f}".format(float(mic3spero)) + "\n XTH/SPERO:  {:.8f}".format(float(xthspero)))
 
 
 from telegram.ext import CommandHandler
